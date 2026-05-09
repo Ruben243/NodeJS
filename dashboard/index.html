@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>E-commerce Dashboard</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <div class="dashboard-container">
+      <header>
+        <h1>Vista Global de Rendimiento</h1>
+        <p>Análisis en tiempo real de Supabase</p>
+      </header>
+
+      <section class="kpi-grid">
+        <div class="kpi-card">
+          <h3>Ingresos Totales (Completados)</h3>
+          <p id="kpi-revenue" class="kpi-value">Cargando...</p>
+        </div>
+        <div class="kpi-card">
+          <h3>Pedidos Completados</h3>
+          <p id="kpi-orders" class="kpi-value">Cargando...</p>
+        </div>
+        <div class="kpi-card">
+          <h3>Ticket Medio</h3>
+          <p id="kpi-aov" class="kpi-value">Cargando...</p>
+        </div>
+      </section>
+
+      <section class="charts-grid">
+        <div class="chart-card span-2">
+          <h2>Evolución de Ventas Diarias</h2>
+          <div class="chart-wrapper">
+            <canvas id="salesLineChart"></canvas>
+          </div>
+        </div>
+        
+        <div class="chart-card">
+          <h2>Ventas por Categoría</h2>
+          <div class="chart-wrapper">
+            <canvas id="categoryPieChart"></canvas>
+          </div>
+        </div>
+        
+        <div class="chart-card">
+          <h2>Estado de los Pedidos</h2>
+          <div class="chart-wrapper">
+            <canvas id="statusBarChart"></canvas>
+          </div>
+        </div>
+
+        <div class="chart-card">
+          <h2>Pedidos por Categoría</h2>
+          <div class="chart-wrapper">
+            <canvas id="categoryBarChart"></canvas>
+          </div>
+        </div>
+
+        <div class="chart-card">
+          <h2>Métodos de Pago</h2>
+          <div class="chart-wrapper">
+            <canvas id="paymentMethodChart"></canvas>
+          </div>
+        </div>
+
+        <div class="chart-card span-2">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
+            <h2 style="margin-bottom: 0;">Top Productos por Categoría</h2>
+            <select id="categoryFilter" class="custom-select">
+              <option value="all">Todas las categorías</option>
+            </select>
+          </div>
+          <div class="chart-wrapper">
+            <canvas id="topProductsChart"></canvas>
+          </div>
+        </div>
+      </section>
+    </div>
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>
